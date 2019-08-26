@@ -6,7 +6,6 @@ app = Flask(__name__)
 CORS(app)
 @app.route("/spellCorrect/<word>")
 def return_words(word):
-  # word = request.args.get('word')
   spell_corrector_object = spell_corrector()
   corrected_words  = spell_corrector_object.predict(word)
   corrected_words = ' '.join(corrected_words)
